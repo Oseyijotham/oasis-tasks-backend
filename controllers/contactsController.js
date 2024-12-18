@@ -128,10 +128,7 @@ const updateContactNameById = async (req, res) => {
 
 const updateContactEmailById = async (req, res) => {
 
-  const { error } = updateEmailValidation.validate(req.body);
-  if (error) {
-    throw httpError(400, "missing fields");
-  }
+  
 
   const { contactId } = req.params;
   const result = await Contact.findByIdAndUpdate(contactId, req.body, {

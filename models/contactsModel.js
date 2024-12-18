@@ -25,7 +25,7 @@ const contactSchema = new Schema(
     },
     avatarURL: {
       type: String,
-      default: "/avatars/Unknown.png",
+      default: "/avatars/UnknownTask.png",
     },
     groups: {
       type: Array,

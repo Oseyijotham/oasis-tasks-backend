@@ -2,7 +2,6 @@ import multer from "multer";
 import path from "path";
 
 const tempPath = path.join("tmp");
-console.log("Mart");
 const multerConfig = multer.diskStorage({
   destination: tempPath,
   filename: (req, file, cb) => {
