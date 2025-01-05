@@ -156,7 +156,30 @@ const updateContactPhoneById = async (req, res) => {
   res.json(result);
 };
 
+const updateTaskStatusById = async (req, res) => {
+  const { contactId } = req.params;
+  const result = await Contact.findByIdAndUpdate(contactId, req.body, {
+    new: true,
+  });
+
+  if (!result) {
+    throw httpError(404);
+  }
+
+  res.json(result);
+};
+
 
 
 // prettier-ignore
-export { getAllContacts,updateContactAvatar, getContactById, addContact, deleteContactById, updateContactNameById,updateContactEmailById, updateContactPhoneById};
+export {
+  getAllContacts,
+  updateContactAvatar,
+  getContactById,
+  addContact,
+  deleteContactById,
+  updateContactNameById,
+  updateContactEmailById,
+  updateContactPhoneById,
+  updateTaskStatusById,
+};

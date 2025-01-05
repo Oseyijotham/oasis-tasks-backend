@@ -1,7 +1,17 @@
 import express from "express";
 import { ctrlWrapper } from "../../helpers/ctrlWrapper.js";
 // prettier-ignore
-import { addContact, deleteContactById, getAllContacts, getContactById, updateContactAvatar, updateContactNameById, updateContactEmailById, updateContactPhoneById } from "../../controllers/contactsController.js";
+import {
+  addContact,
+  deleteContactById,
+  getAllContacts,
+  getContactById,
+  updateContactAvatar,
+  updateContactNameById,
+  updateContactEmailById,
+  updateContactPhoneById,
+  updateTaskStatusById,
+} from "../../controllers/contactsController.js";
 import { authenticateToken } from "../../middlewares/authenticateToken.js";
 import { upload } from "../../middlewares/upload.js";
 
@@ -26,6 +36,8 @@ router.patch("/emailupdate/:contactId", authenticateToken, ctrlWrapper(updateCon
 
 
 router.patch("/phoneupdate/:contactId", authenticateToken, ctrlWrapper(updateContactPhoneById));
+
+router.patch("/taskupdate/:contactId", authenticateToken, ctrlWrapper(updateTaskStatusById));
 
 
 

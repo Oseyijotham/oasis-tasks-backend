@@ -8,13 +8,17 @@ const contactSchema = new Schema(
     },
     email: {
       type: String,
-      default: "john@doe.com",
+      default: "Enter task details",
     },
     phone: {
       type: String,
       required: [true, "Set phone for contact"],
     },
     favorite: {
+      type: Boolean,
+      default: false,
+    },
+    status: {
       type: Boolean,
       default: false,
     },
