@@ -9,7 +9,7 @@ const app = express();
 const formatsLogger = app.get("env") === "development" ? "dev" : "short";
 
 app.use(logger(formatsLogger));
-app.use(cors());
+app.use(cors({ origin: "https://oseyijotham.github.io/oasis-tasks" }));
 app.use(express.json());
 
 // tells Express to serve static files from the public directory and not the app.js file)
